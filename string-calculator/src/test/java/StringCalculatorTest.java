@@ -28,7 +28,7 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void canSumThreeNumbers(){
+    public void canSumAnyNumbers(){
         int result = Add("1,2,3,4,5");
         assertEquals("Sum of 1,2,3,4,5 is 15", 15, result);
     }
