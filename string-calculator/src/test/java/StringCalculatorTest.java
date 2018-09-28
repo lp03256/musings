@@ -1,24 +1,30 @@
-import org.junit.Assert;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class StringCalculatorTest {
 
     @Test
     public void testSumOfEmptyStringIsZero(){
         int result = Add("");
-        Assert.assertEquals("Sum of null string should be zero", 0, result);
+        assertEquals("Sum of null string should be zero", 0, result);
     }
 
     @Test
     public void testSumOfSingleNumberIsTheNumberItself(){
         int result = Add("5");
-        Assert.assertEquals("Sum of a number should be number itself", 5, result);
+        assertEquals("Sum of a number should be number itself", 5, result);
     }
 
     @Test
     public void canSumTwoNumbers(){
         int result = Add("4,5");
-        Assert.assertEquals("Sum of 4,5 is 9", 9, result);
+        assertEquals("Sum of 4,5 is 9", 9, result);
+    }
+
+    @Test
+    public void canSumThreeNumbers(){
+        int result = Add("1,2,3,4,5");
+        assertEquals("Sum of 1,2,3,4,5 is 15", 15, result);
     }
 
     private int Add(String numbers){
