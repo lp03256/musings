@@ -1,4 +1,10 @@
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static org.junit.Assert.*;
 
 public class StringCalculatorTest {
@@ -28,19 +34,11 @@ public class StringCalculatorTest {
     }
 
     private int Add(String numbers){
-        if (numbers.isEmpty())
-            return 0;
-        else if(numbers.length() == 1)
-            return Integer.parseInt(numbers);
-        else{
-            int sum = 0;
-            String [] toAdd = numbers.split(",");
-            for (String number:
-                 toAdd) {
-                sum += Integer.parseInt(number);
-            }
-            return sum;
-        }
+        
+        if (!numbers.isEmpty()) {
+            List<Integer> integerList = Arrays.stream(numbers.split(",")).map(Integer::decode).collect(Collectors.toList());
+            return integerList.stream().mapToInt(Integer::intValue).sum();
+        }else return 0;
 
     }
 }
