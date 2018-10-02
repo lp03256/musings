@@ -1,10 +1,8 @@
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
 
@@ -51,14 +49,9 @@ public class StringCalculatorTest {
     private String [] getInputArray(String numbers) {
         String [] halfBakedInput = numbers.split("\n");
         ArrayList<String> result = new ArrayList<String>();
-        for (String element: halfBakedInput
-             ) {
-            String [] units = element.split(",");
-            for (String unit:
-                 units ) {
-                result.add(unit);
-            }
-        }
+
+        for (String element: halfBakedInput)
+            Collections.addAll(result, element.split(","));
         return result.toArray(new String[result.size()]);
     }
 }
