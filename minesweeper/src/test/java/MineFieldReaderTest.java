@@ -14,25 +14,11 @@ import java.util.stream.Stream;
 import static org.junit.Assert.*;
 
 public class MineFieldReaderTest {
-
-    @Before
-    public void setUp() throws IOException{
-        FileWriter fileWriter = new FileWriter("mines.ini");
-        fileWriter.write("3 3" + System.getProperty("line.separator") );
-        fileWriter.write("* . ." + System.getProperty("line.separator") );
-        fileWriter.write(". * ." + System.getProperty("line.separator") );
-        fileWriter.write(". . ." + System.getProperty("line.separator") );
-        fileWriter.close();
-    }
-
-    @After
-    public void tearDown() throws IOException {
-        new File("mines.ini").delete();
-    }
-
+    
     @Test
     public void canInitializeMineFieldFromFile() throws IOException {
-        char [][] board = initialiseMineField("mines.ini");
+        String path = getClass().getClassLoader().getResource("mines.ini").getPath();
+        char [][] board = initialiseMineField(path);
         assertEquals("Mine field size is 3X3", 3, board.length);
         assertEquals('.',board[0][1]);
     }
