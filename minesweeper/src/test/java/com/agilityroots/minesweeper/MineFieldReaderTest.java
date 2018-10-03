@@ -14,9 +14,9 @@ public class MineFieldReaderTest {
     public void canInitializeMineFieldFromFile() throws IOException {
         String path = getClass().getClassLoader().getResource("mines.ini").getPath();
         MineFieldReader mineFieldReader = new MineFieldReader();
-        List<Cell> mineField = mineFieldReader.initialiseMineField(path);
-        assertEquals("This mine field as 9 cells", 9, mineField.size());
-        assertEquals("First cell is a mine", '*', mineField.get(0).value);
+        char [][] mineField = mineFieldReader.initialiseMineField(path);
+        assertEquals("This mine field as 3 rows", 3, mineField.length);
+        assertEquals("First cell is a mine", '*', mineField[0][0]);
     }
 
 }
