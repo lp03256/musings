@@ -1,25 +1,19 @@
 package com.agilityroots.minesweeper;
 
-public class Cell implements Comparable<Coordinate> {
+public class Cell {
 
-    public final Coordinate coordinate;
+    public final int x;
 
-    public final char value;
+    public final int y;
 
-    public Cell(Coordinate coordinate, char value){
-        this.coordinate = coordinate;
-        this.value = value;
+
+    public Cell(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
-    @Override
-    public int compareTo(Coordinate toCompare) {
-        if(coordinate.x == toCompare.x && coordinate.y == toCompare.y)
-            return 0;
-        else if (coordinate.x < toCompare.x)
-            return -1;
-        else if (coordinate.x > toCompare.x)
-            return 1;
-        else
-            return 1;
+    public Cell move(Cell vector) {
+        return new Cell(x + vector.x, y + vector.y);
     }
+
 }
