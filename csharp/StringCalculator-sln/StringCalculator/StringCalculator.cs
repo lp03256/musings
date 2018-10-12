@@ -9,7 +9,14 @@ namespace StringCalculator
             if (String.IsNullOrEmpty(numbers))
                 return 0;
             else
-                return Int32.Parse(numbers);
+            {
+                int sum = 0;
+                String[] numbersAsArray = numbers.Split(',');
+                foreach(var number in numbersAsArray)
+                    sum += Int32.Parse(number);
+                return sum;
+            }
+                
         }
     }
 }
