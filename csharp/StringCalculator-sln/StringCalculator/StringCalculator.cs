@@ -6,7 +6,10 @@ namespace StringCalculator
     {
         public int Add(String numbers)
         {
-            return 0;
+            if (String.IsNullOrEmpty(numbers))
+                return 0;
+            else
+                return Int32.Parse(numbers);
         }
     }
 }

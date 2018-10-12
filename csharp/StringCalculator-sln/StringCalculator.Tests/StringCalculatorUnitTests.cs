@@ -13,7 +13,7 @@ namespace StringCalculator.Tests
         }
 
         [TestMethod]
-        public void TestSumOfNumberIsNumberIsItself()
+        public void TestSumOfASingleNumberIsItself()
         {
             StringCalculator.Addition calculator = new StringCalculator.Addition();
             Assert.AreEqual(calculator.Add("4"), 4);
