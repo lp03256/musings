@@ -5,18 +5,27 @@ namespace StringCalculator.Tests
     [TestClass]
     public class StringCalculatorUnitTests
     {
+
+        StringCalculator.Addition calculator; 
+
+        [TestInitialize]
+        public void InitializeTest()
+        {
+            calculator = new StringCalculator.Addition();
+        }
         [TestMethod]
         public void TestSumOfEmptyStringIsZero()
         {
-            StringCalculator.Addition calculator = new StringCalculator.Addition();
             Assert.AreEqual(calculator.Add(""), 0);
         }
 
         [TestMethod]
         public void TestSumOfASingleNumberIsItself()
         {
-            StringCalculator.Addition calculator = new StringCalculator.Addition();
             Assert.AreEqual(calculator.Add("4"), 4);
         }
+
+        [TestMethod]         public void TestCanSumTwoCommaSeparatedNumbers()         {             Assert.AreEqual(calculator.Add("4,3"), 7);         }
+
     }
 }
