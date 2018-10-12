@@ -11,5 +11,12 @@ namespace StringCalculator.Tests
             StringCalculator.Addition calculator = new StringCalculator.Addition();
             Assert.AreEqual(calculator.Add(""), 0);
         }
+
+        [TestMethod]
+        public void TestSumOfNumberIsNumberIsItself()
+        {
+            StringCalculator.Addition calculator = new StringCalculator.Addition();
+            Assert.AreEqual(calculator.Add("4"), 4);
+        }
     }
 }
