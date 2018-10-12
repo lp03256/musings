@@ -9,28 +9,17 @@ namespace StringCalculator.Tests
         StringCalculator.Addition calculator; 
 
         [TestInitialize]
-        public void InitializeTest()
-        {
-            calculator = new StringCalculator.Addition();
-        }
-        [TestMethod]
-        public void TestSumOfEmptyStringIsZero()
-        {
-            Assert.AreEqual(calculator.Add(""), 0);
-        }
+        public void InitializeTest() => calculator = new StringCalculator.Addition();
 
         [TestMethod]
-        public void TestSumOfASingleNumberIsItself()
-        {
-            Assert.AreEqual(calculator.Add("4"), 4);
-        }
-
-        [TestMethod]         public void TestCanSumTwoCommaSeparatedNumbers()         {             Assert.AreEqual(calculator.Add("4,3"), 7);         }
+        public void TestSumOfEmptyStringIsZero() => Assert.AreEqual(calculator.Add(""), 0);
 
         [TestMethod]
-        public void TestCanSumAnySeparatedNumbers()
-        {
-            Assert.AreEqual(calculator.Add("4,3,2,10"), 19);
-        }
+        public void TestSumOfASingleNumberIsItself() => Assert.AreEqual(calculator.Add("4"), 4);
+
+        [TestMethod]         public void TestCanSumTwoCommaSeparatedNumbers() => Assert.AreEqual(calculator.Add("4,3"), 7);
+
+        [TestMethod]
+        public void TestCanSumAnySeparatedNumbers() => Assert.AreEqual(calculator.Add("4,3,2,10"), 19);
     }
 }
