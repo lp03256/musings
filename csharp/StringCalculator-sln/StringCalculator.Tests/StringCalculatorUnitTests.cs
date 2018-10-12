@@ -27,5 +27,10 @@ namespace StringCalculator.Tests
 
         [TestMethod]         public void TestCanSumTwoCommaSeparatedNumbers()         {             Assert.AreEqual(calculator.Add("4,3"), 7);         }
 
+        [TestMethod]
+        public void TestCanSumAnySeparatedNumbers()
+        {
+            Assert.AreEqual(calculator.Add("4,3,2,10"), 19);
+        }
     }
 }
