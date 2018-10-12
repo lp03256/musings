@@ -9,6 +9,7 @@ namespace StringCalculator.Tests
         public void TestSumOfEmptyStringIsZero()
         {
             StringCalculator.Addition calculator = new StringCalculator.Addition();
+            Assert.AreEqual(calculator.Add(""), 0);
         }
     }
 }
