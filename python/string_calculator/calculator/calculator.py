@@ -2,4 +2,6 @@
 # -*- coding: utf-8 -*-
 
 class Calculator:
-    pass
+    
+    def add(self, numbers):
+        pass
