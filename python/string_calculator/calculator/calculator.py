@@ -7,4 +7,5 @@ class Calculator:
         if not numbers:
             return 0
         else:
-            return int(numbers)
+            numbersArray = [ int(number) for number in numbers.split(',')]
+            return sum(numbersArray)         
