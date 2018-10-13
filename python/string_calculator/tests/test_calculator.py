@@ -18,4 +18,7 @@ class CalculatorTest(unittest.TestCase):
     def test_sum_of_two_numbers_comma_separated(self):
         calc = Calculator()
         self.assertEqual(calc.add("5,3"), 8, "Sum of 5,3 is 8")
-        
+
+    def test_sum_of_any_numbers_comma_separated(self):
+        calc = Calculator()
+        self.assertEqual(calc.add("5,3,10,2"), 20, "Sum of 5,3 is 20")    
