@@ -4,4 +4,4 @@
 class Calculator:
     
     def add(self, numbers):
-        pass
+        return 0
