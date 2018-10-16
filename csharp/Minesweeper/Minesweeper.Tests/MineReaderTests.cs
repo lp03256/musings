@@ -3,11 +3,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Minesweeper.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class MineReaderTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestInitialisesMine()
         {
+            Minesweeper.MineReader reader = new Minesweeper.MineReader();
         }
     }
 }
