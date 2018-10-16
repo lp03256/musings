@@ -2,7 +2,7 @@
 
 namespace Minesweeper
 {
-    public class Class1
+    public class MineReader
     {
     }
 }
