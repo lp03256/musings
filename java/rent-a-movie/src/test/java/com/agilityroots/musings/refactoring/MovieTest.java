@@ -51,4 +51,22 @@ public class MovieTest {
 
         assertThat(charge).isEqualTo(3.0);
     }
+
+    @Test
+    public void testFrequentRenterPointsForNewReleases() {
+        Movie movie = new Movie("Some Moview", Movie.NEW_RELEASE);
+
+        int frequentRenterPoints = movie.getFrequentRenterPoints(2);
+
+        assertThat(frequentRenterPoints).isEqualTo(2);
+    }
+
+    @Test
+    public void testFrequentRenterPointsForOtherReleases() {
+        Movie movie = new Movie("Some Moview", Movie.REGULAR);
+
+        int frequentRenterPoints = movie.getFrequentRenterPoints(2);
+
+        assertThat(frequentRenterPoints).isEqualTo(1);
+    }
 }
