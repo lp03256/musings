@@ -9,7 +9,7 @@ public class MovieTest {
 
     @Test
     public void testRentalForNewRelease() {
-        Movie movie = new Movie("Some Moview", Movie.NEW_RELEASE);
+        Movie movie = new Movie("Some Moview", new NewReleasePrice());
 
         double charge = movie.getCharge(2);
 
@@ -18,7 +18,7 @@ public class MovieTest {
 
     @Test
     public void testRentalForRegularMovie() {
-        Movie movie = new Movie("Some Moview", Movie.REGULAR);
+        Movie movie = new Movie("Some Moview", new RegularPrice());
 
         double charge = movie.getCharge(2);
 
@@ -27,7 +27,7 @@ public class MovieTest {
 
     @Test
     public void testRentalForRegularMovieMoreThanTwoDays() {
-        Movie movie = new Movie("Some Moview", Movie.REGULAR);
+        Movie movie = new Movie("Some Moview", new RegularPrice());
 
         double charge = movie.getCharge(3);
 
@@ -36,7 +36,7 @@ public class MovieTest {
 
     @Test
     public void testRentalForChildrensMovie() {
-        Movie movie = new Movie("Some Moview", Movie.CHILDRENS);
+        Movie movie = new Movie("Some Moview", new ChildrensPrice());
 
         double charge = movie.getCharge(2);
 
@@ -45,7 +45,7 @@ public class MovieTest {
 
     @Test
     public void testRentalForChildrenMovieMoreThanThreeDays() {
-        Movie movie = new Movie("Some Moview", Movie.CHILDRENS);
+        Movie movie = new Movie("Some Moview", new ChildrensPrice());
 
         double charge = movie.getCharge(4);
 
@@ -54,7 +54,7 @@ public class MovieTest {
 
     @Test
     public void testFrequentRenterPointsForNewReleases() {
-        Movie movie = new Movie("Some Moview", Movie.NEW_RELEASE);
+        Movie movie = new Movie("Some Moview", new NewReleasePrice());
 
         int frequentRenterPoints = movie.getFrequentRenterPoints(2);
 
@@ -63,7 +63,7 @@ public class MovieTest {
 
     @Test
     public void testFrequentRenterPointsForOtherReleases() {
-        Movie movie = new Movie("Some Moview", Movie.REGULAR);
+        Movie movie = new Movie("Some Moview", new RegularPrice());
 
         int frequentRenterPoints = movie.getFrequentRenterPoints(2);
 

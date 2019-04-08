@@ -11,8 +11,8 @@ public class CustomerTest {
 
     @Before
     public void setup() {
-        Movie snatch = new Movie("Snatch", Movie.REGULAR);
-        Movie shazam = new Movie("Shazam", Movie.NEW_RELEASE);
+        Movie snatch = new Movie("Snatch", new RegularPrice());
+        Movie shazam = new Movie("Shazam", new NewReleasePrice());
 
         Rental snatchRental = new Rental(snatch, 3);
         Rental shazamRental = new Rental(shazam, 3);
