@@ -1,6 +1,10 @@
 package com.agilityroots.musings.refactoring;
 
 abstract class Price {
+    public static final int CHILDRENS = 2;
+    public static final int NEW_RELEASE = 1;
+    public static final int REGULAR = 0;
+
     abstract int getPriceCode();
 
     abstract double getCharge(int daysRented);
@@ -11,8 +15,9 @@ abstract class Price {
 }
 
 class ChildrensPrice extends Price {
+
     int getPriceCode() {
-        return Movie.CHILDRENS;
+        return CHILDRENS;
     }
 
     double getCharge(int daysRented) {
@@ -24,8 +29,9 @@ class ChildrensPrice extends Price {
 }
 
 class NewReleasePrice extends Price {
+
     int getPriceCode() {
-        return Movie.NEW_RELEASE;
+        return NEW_RELEASE;
     }
 
     double getCharge(int daysRented) {
@@ -39,8 +45,9 @@ class NewReleasePrice extends Price {
 }
 
 class RegularPrice extends Price {
+
     int getPriceCode() {
-        return Movie.REGULAR;
+        return REGULAR;
     }
 
     double getCharge(int daysRented) {
