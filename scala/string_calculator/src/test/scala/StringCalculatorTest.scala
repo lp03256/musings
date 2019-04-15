@@ -7,7 +7,15 @@ class StringCalculatorTest {
     assertEquals("Sum of empty string is zero", 0, add(""))
   }
 
-  def add(str: String) ={
-    0;
+  @Test def testSumOfSingleDigit(): Unit = {
+    assertEquals("Sum of a digit is number itself", 5, add("5"))
+  }
+
+  def add(numbers: String): Int ={
+    try {
+      numbers.toInt
+    } catch {
+      case e: Exception => 0
+    }
   }
 }
