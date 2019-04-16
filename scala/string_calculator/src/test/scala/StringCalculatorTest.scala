@@ -15,6 +15,10 @@ class StringCalculatorTest {
     assertEquals("Sum of a digit is number itself", 9, add("4,5"))
   }
 
+  @Test def testCanSumUnknownNumbersCommaSeparator(): Unit = {
+    assertEquals("Sum of unknown amount of numbers", 15, add("1,2,3,4,5"))
+  }
+
   def add(numbers: String): Int ={
     if(!numbers.isEmpty)
       numbers.split(",").map(i => i.toInt).sum
