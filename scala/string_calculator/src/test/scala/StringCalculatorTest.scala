@@ -11,11 +11,14 @@ class StringCalculatorTest {
     assertEquals("Sum of a digit is number itself", 5, add("5"))
   }
 
+  @Test def testSumOfTwoDigits(): Unit = {
+    assertEquals("Sum of a digit is number itself", 9, add("4,5"))
+  }
+
   def add(numbers: String): Int ={
-    try {
-      numbers.toInt
-    } catch {
-      case e: Exception => 0
-    }
+    if(!numbers.isEmpty)
+      numbers.split(",").map(i => i.toInt).sum
+    else
+      0
   }
 }
