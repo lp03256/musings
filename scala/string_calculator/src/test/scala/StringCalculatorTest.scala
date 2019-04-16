@@ -20,7 +20,7 @@ class StringCalculatorTest {
   }
 
   @Test def testCanAddMultipleSeparatorNumbers(): Unit = {
-    assertEquals("Sum of 1\\n2,3 is 6", 15, add("1,2,3,4,5"))
+    assertEquals("Sum of 1\\n2,3 is 6", 6, add("1\n2,3"))
   }
 
   def add(numbers: String): Int ={
