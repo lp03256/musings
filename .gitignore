@@ -5,6 +5,7 @@
 .settings
 .classpath
 .DS_Store
+**/*.iml
 # Ignore Gradle GUI config
 gradle-app.setting
 
