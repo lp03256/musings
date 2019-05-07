@@ -10,6 +10,7 @@ exports.config = {
   },
   directConnect: true,
   framework: 'custom',
+  frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
     require: ['./src/steps/**/*.steps.ts'],
     format: 'json: e2e-output.txt', 
