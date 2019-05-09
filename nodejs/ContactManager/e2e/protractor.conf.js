@@ -8,14 +8,15 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome'
   },
-  directConnect: true,
+  seleniumAddress: 'http://localhost:4444/wd/hub',
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
     require: ['./src/steps/**/*.steps.ts'],
     format: 'json:e2e-output.txt', 
   }, 
-  onPrepare() {
+  onPrepare: async() => {
+    await browser.waitForAngularEnabled(false);
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
