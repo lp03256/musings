@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "webdriver-start": "webdriver-manager start",
+    "e2e-webdriver-no-update": "ng e2e --webdriver-update false",
+    "bdd-tests": "npm-run-all --parallel webdriver-start e2e-webdriver-no-update"
   },
   "private": true,
   "dependencies": {
