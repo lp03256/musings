@@ -21,10 +21,8 @@ class ChildrensPrice extends Price {
     }
 
     double getCharge(int daysRented) {
-        double result = 1.5;
-        if (daysRented > 3)
-            result += (daysRented - 3) * 1.5;
-        return result;
+        
+        return 1.5 + Math.max(0, (daysRented - 3)) * 1.5;
     }
 }
 
@@ -51,9 +49,7 @@ class RegularPrice extends Price {
     }
 
     double getCharge(int daysRented) {
-        double result = 2;
-        if (daysRented > 2)
-            result += (daysRented - 2) * 1.5;
-        return result;
+
+        return 2 + Math.max(0, (daysRented - 2)) * 1.5;
     }
 }
