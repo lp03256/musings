@@ -6,7 +6,7 @@ import java.util.Vector;
 class Customer {
     private String _name;
     private Vector<Rental> _rentals = new Vector<>();
->
+
     public Customer(String name) {
         _name = name;
     }
